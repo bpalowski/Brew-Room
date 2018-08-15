@@ -7,20 +7,24 @@ import { Brew } from './models/brew.model'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Grand Wizard Eddies Potion Brewing Hut';
+  title = 'Grand Master Eddies Potion Brewing Hut';
 
   potions: Brew[] = [
-    new Brew("Dragon Tooth Tea", "Health", 75, 300),
-    new Brew("Titan Grip", "Strength", 45, 150),
-    new Brew("Mana Wraith Essence", "Mana", 50, 200),
-    new Brew("Giant's Toe Ale", "Stamina", 25, 100)
+    new Brew("Dragon Tooth Tea", "Health", 75, 300, "One"),
+    new Brew("Titan Grip", "Strength", 45, 150, "Two"),
+    new Brew("Mana Wraith Essence", "Mana", 50, 200, "Three"),
+    new Brew("Giant's Toe Ale", "Stamina", 25, 100, "Four")
   ]
 
+  newPot = null;
 
-
-  editTask(potList){
-    this.potions = null;
+  editTask(clickedPot) {
+      this.newPot = clickedPot;
+    }
+  finishedEditing() {
+      this.newPot = null;
   }
+
 
 
 

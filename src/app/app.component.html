@@ -9,26 +9,31 @@
   <img src="../assets/brew.jpeg" alt="">
 </div>
 <h2>Here are some potions to help you start: </h2>
-<button (click)="editTask(potList)">Edit!</button>
 <ul>
-  <li [class]="textColor(potList)" *ngFor="let potList of potions">
+  <li *ngFor="let potList of potions" [class]="textColor(potList)">
+
     <p><strong>{{potList.name}}:</strong></p>
     <p>Potion Type: {{potList.type}}</p>
     <p>Potency: {{potList.potency}}/100</p>
     <p>Price: {{potList.cost}} Gold</p>
     <p>In Stock: {{potList.amount}} remaining</p>
-    <h4>{{potList.name}}</h4>
-<p>Still in stock? {{potList.amount}}</p>
+    <button (click)="editTask(potList)">Edit!</button>
+</li>
+<div *ngIf="newPot">
 <h4>Mix Potion</h4>
 <label>New Name:</label>
-<input [(ngModel)]="potList.name">
+<input [(ngModel)]="newPot.name">
 <label>Potion Type:</label>
 <br>
-<input type="radio" [(ngModel)]="potList.type" value="Health">  Health<br>
-<input type="radio" [(ngModel)]="potList.type" value="Strength">  Strength<br>
-<input type="radio" [(ngModel)]="potList.type" value="Mana">  Mana<br>
-<input type="radio" [(ngModel)]="potList.type" value="Stamina">  Stamina<br>
-  <br>
-  </li>
+<input type="radio" [(ngModel)]="newPot.type" value="Health"> Health<br>
+<input type="radio" [(ngModel)]="newPot.type" value="Strength"> Strength<br>
+<input type="radio" [(ngModel)]="newPot.type" value="Mana"> Mana<br>
+<input type="radio" [(ngModel)]="newPot.type" value="Stamina"> Stamina<br>
+<button (click)="finishedEditing()">Done</button>
+</div>
+
+<br>
+<br>
+<br>
 </ul>
 </div>
