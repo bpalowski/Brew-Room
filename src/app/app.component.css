@@ -3,8 +3,10 @@
 }
 
 .displayEdit {
+  position: fixed;
   float: right;
   border: solid;
+  left: 50%;
   margin: 20px;
   padding: 10px;
 }
