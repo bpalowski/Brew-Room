@@ -1,3 +1,21 @@
 #One, #Two, #Three, #Four {
   display: none;
 }
+
+.displayEdit {
+  float: right;
+  border: solid;
+  margin: 20px;
+  padding: 10px;
+}
+
+.potionInfo {
+  width: 450px;
+  float: left;
+}
+
+#boxes {
+  border: solid;
+  margin: 20px;
+  padding: 10px;
+}

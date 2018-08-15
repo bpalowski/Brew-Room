@@ -10,10 +10,10 @@ export class AppComponent {
   title = 'Grand Master Eddies Potion Brewing Hut';
 
   potions: Brew[] = [
-    new Brew("Dragon Tooth Tea", "Health", 75, 300, "One"),
-    new Brew("Titan Grip", "Strength", 45, 150, "Two"),
-    new Brew("Mana Wraith Essence", "Mana", 50, 200, "Three"),
-    new Brew("Giant's Toe Ale", "Stamina", 25, 100, "Four")
+    new Brew("Dragon Tooth Tea", "Health", ["b", "a", "c"],75, 300, "One"),
+    new Brew("Titan Grip", "Strength", ["b"],45, 150, "Two"),
+    new Brew("Mana Wraith Essence", "Mana", ["b"],50, 200, "Three"),
+    new Brew("Giant's Toe Ale", "Stamina", ["b"],25, 100, "Four")
   ]
 
   newPot = null;
@@ -24,9 +24,7 @@ export class AppComponent {
   finishedEditing() {
       this.newPot = null;
   }
-
-
-
+  
 
   textColor(potList){
     if (potList.type === "Health"){

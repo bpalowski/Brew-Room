@@ -8,21 +8,37 @@
     </div>
   <img src="../assets/brew.jpeg" alt="">
 </div>
+
 <h2>Here are some potions to help you start: </h2>
-<ul>
-  <li *ngFor="let potList of potions" [class]="textColor(potList)">
+
+
+  <div class="potionInfo">
+
+  <div *ngFor="let potList of potions" [class]="textColor(potList)" id="boxes">
 
     <p><strong>{{potList.name}}:</strong></p>
     <p>Potion Type: {{potList.type}}</p>
+    <!-- <ul>
+      <li *ngFor="let potList of this.potions">
+        <p>{{potList.ingredients}}</p>
+      </li>
+    </ul> -->
+    <p>{{potList.listInd()}}</p>
     <p>Potency: {{potList.potency}}/100</p>
     <p>Price: {{potList.cost}} Gold</p>
     <p>In Stock: {{potList.amount}} remaining</p>
     <button (click)="editTask(potList)">Edit!</button>
-</li>
-<div *ngIf="newPot">
-<h4>Mix Potion</h4>
+</div>
+
+</div>
+
+
+<div *ngIf="newPot" class = "displayEdit">
+<h4>Mix {{newPot.name}}</h4>
 <label>New Name:</label>
 <input [(ngModel)]="newPot.name">
+<br>
+<br>
 <label>Potion Type:</label>
 <br>
 <input type="radio" [(ngModel)]="newPot.type" value="Health"> Health<br>
@@ -35,5 +51,4 @@
 <br>
 <br>
 <br>
-</ul>
 </div>
