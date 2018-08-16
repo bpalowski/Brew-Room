@@ -1,0 +1,9 @@
+#boxes {
+  border: solid;
+  margin: 20px;
+  padding: 10px;
+}
+.potionInfo {
+  width: 450px;
+  float: left;
+}

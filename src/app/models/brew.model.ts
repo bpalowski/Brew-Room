@@ -5,13 +5,17 @@ export class Brew{
   constructor(public name: string, public type: string, public ingredients: string[], public potency: number, public cost: number, public potionId: string) {}
 
   hideShow() {
-    var x = document.getElementById(this.potionId);
+    let x = document.getElementById(this.potionId);
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
         x.style.display = "none";
     }
 }
+
+
+
+
 
 listInd() {
   let testString = "Ingredients: ";

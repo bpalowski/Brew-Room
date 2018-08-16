@@ -1,0 +1,17 @@
+<div class="potionInfo">
+
+<div *ngFor="let potList of childPotionList" [class]="textColor(potList)" id="boxes">
+
+  <p><strong>{{potList.name}}:</strong></p>
+  <p>Potion Type: {{potList.type}}</p>
+
+  <p>{{potList.listInd()}}</p>
+  <p>Potency: {{potList.potency}}/100</p>
+  <p>Price: {{potList.cost}} Gold</p>
+  <p>In Stock: {{potList.amount}} remaining</p>
+  <button (click)="soldPotion(potList)">Sold</button>
+<br>
+  <button (click)="editPotionShow(potList)">Edit!</button>
+</div>
+
+</div>
